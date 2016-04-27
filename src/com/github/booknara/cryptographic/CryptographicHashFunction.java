@@ -5,6 +5,9 @@ import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.util.Formatter;
 
+/**
+ * @author : Daehee Han(@daniel_booknara) on 4/27/16.
+ */
 public class CryptographicHashFunction {
 
     public static void main(String[] args) {
@@ -44,7 +47,6 @@ public class CryptographicHashFunction {
         } catch (NoSuchAlgorithmException e) {
             e.printStackTrace();
         }
-
     }
 
     public static byte[] getHashValue(MessageDigest digest, byte[] bytes) {
