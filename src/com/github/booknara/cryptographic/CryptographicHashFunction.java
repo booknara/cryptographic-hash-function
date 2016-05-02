@@ -17,30 +17,30 @@ public class CryptographicHashFunction {
         try {
             // MD5
             digest = MessageDigest.getInstance("MD5");
-            System.out.printf(digest.getAlgorithm() + " (%s) = %s \n", input, bytesTooHex(getHashValue(digest, input.getBytes("UTF-8"))));
-            System.out.printf(digest.getAlgorithm() + " (%s) = %s \n", input, bytesTooHex(getHashValue(digest, input.getBytes("UTF-8"))));
-            System.out.printf(digest.getAlgorithm() + " (%s) = %s \n", input, bytesTooHex(getHashValue(digest, input.getBytes())));
-            System.out.printf(digest.getAlgorithm() + " (%s) = %s \n", input, bytesTooHex(getHashValue(digest, input.getBytes())));
+            System.out.printf(digest.getAlgorithm() + " (%s) value = %s \n", input, bytesTooHex(getHashValue(digest, input.getBytes("UTF-8"))));
+            System.out.printf(digest.getAlgorithm() + " (%s) value = %s \n", input, bytesTooHex(getHashValue(digest, input.getBytes("UTF-8"))));
+            System.out.printf(digest.getAlgorithm() + " (%s) value = %s \n", input, bytesTooHex(getHashValue(digest, input.getBytes())));
+            System.out.printf(digest.getAlgorithm() + " (%s) value = %s \n", input, bytesTooHex(getHashValue(digest, input.getBytes())));
 
             // SHA-1
             digest = MessageDigest.getInstance("SHA-1");
-            System.out.printf(digest.getAlgorithm() + " (%s) = %s \n", input, bytesTooHex(getHashValue(digest, input.getBytes())));
-            System.out.printf(digest.getAlgorithm() + " (%s) = %s \n", input, bytesTooHex(getHashValue(digest, input.getBytes())));
+            System.out.printf(digest.getAlgorithm() + " (%s) value = %s \n", input, bytesTooHex(getHashValue(digest, input.getBytes())));
+            System.out.printf(digest.getAlgorithm() + " (%s) value = %s \n", input, bytesTooHex(getHashValue(digest, input.getBytes())));
 
             // SHA-256
             digest = MessageDigest.getInstance("SHA-256");
-            System.out.printf(digest.getAlgorithm() + " (%s) = %s \n", input, bytesTooHex(getHashValue(digest, input.getBytes())));
-            System.out.printf(digest.getAlgorithm() + " (%s) = %s \n", input, bytesTooHex(getHashValue(digest, input.getBytes())));
+            System.out.printf(digest.getAlgorithm() + " (%s) value = %s \n", input, bytesTooHex(getHashValue(digest, input.getBytes())));
+            System.out.printf(digest.getAlgorithm() + " (%s) value = %s \n", input, bytesTooHex(getHashValue(digest, input.getBytes())));
 
             // SHA-384
             digest = MessageDigest.getInstance("SHA-384");
-            System.out.printf(digest.getAlgorithm() + " (%s) = %s \n", input, bytesTooHex(getHashValue(digest, input.getBytes())));
-            System.out.printf(digest.getAlgorithm() + " (%s) = %s \n", input, bytesTooHex(getHashValue(digest, input.getBytes())));
+            System.out.printf(digest.getAlgorithm() + " (%s) value = %s \n", input, bytesTooHex(getHashValue(digest, input.getBytes())));
+            System.out.printf(digest.getAlgorithm() + " (%s) value = %s \n", input, bytesTooHex(getHashValue(digest, input.getBytes())));
 
             // SHA-512
             digest = MessageDigest.getInstance("SHA-512");
-            System.out.printf(digest.getAlgorithm() + " (%s) = %s \n", input, bytesTooHex(getHashValue(digest, input.getBytes())));
-            System.out.printf(digest.getAlgorithm() + " (%s) = %s \n", input, bytesTooHex(getHashValue(digest, input.getBytes())));
+            System.out.printf(digest.getAlgorithm() + " (%s) value = %s \n", input, bytesTooHex(getHashValue(digest, input.getBytes())));
+            System.out.printf(digest.getAlgorithm() + " (%s) value = %s \n", input, bytesTooHex(getHashValue(digest, input.getBytes())));
 
         } catch (UnsupportedEncodingException e) {
             e.printStackTrace();
@@ -55,7 +55,7 @@ public class CryptographicHashFunction {
     }
 
     public static String bytesTooHex(byte[] hashValue) {
-        System.out.println("Length of byte : " +hashValue.length);
+        System.out.println("Length of hash byte : " +hashValue.length);
         Formatter formatter = new Formatter();
         for (int i = 0; i < hashValue.length; i++) {
             formatter.format("%02x", hashValue[i]);
