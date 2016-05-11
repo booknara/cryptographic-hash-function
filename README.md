@@ -12,3 +12,10 @@ Java supports the most popular cryptographic hash functions as below:
 - SHA-256
 - SHA-384
 - SHA-512
+
+Symmetric key algorithms are algorithm for cryptographic that use the same cryptographic keys for both encryption of plaintext and decryption of ciphertext.
+
+Block cipher mode
+- DES (64 bits)
+- Triple DES (64 bits)
+- AES (128 bits)

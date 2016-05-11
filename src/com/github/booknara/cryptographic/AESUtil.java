@@ -1,5 +1,6 @@
 package com.github.booknara.cryptographic;
 
+import java.util.Base64;
 import javax.crypto.Cipher;
 import javax.crypto.spec.SecretKeySpec;
 
@@ -9,17 +10,18 @@ import javax.crypto.spec.SecretKeySpec;
 public class AESUtil {
     private static final String ENCRYPT_ALGORITHM = "AES";
 
-    public static byte[] encrypt(byte[] encryptionKey, byte[] plainBytes) throws Exception {
+    public static String encrypt(byte[] encryptionKey, byte[] plainBytes) throws Exception {
         Cipher cipher = getCipher(encryptionKey, Cipher.ENCRYPT_MODE);
 
-        return cipher.doFinal(plainBytes);
+        return Base64.getEncoder().encodeToString(cipher.doFinal(plainBytes));
     }
 
-    public static byte[] decrypt(byte[] encryptionKey, byte[] encryptedBytes) throws Exception {
+    public static String decrypt(byte[] encryptionKey, byte[] encryptedBytes) throws Exception {
         Cipher cipher = getCipher(encryptionKey, Cipher.DECRYPT_MODE);
 
-        return cipher.doFinal(encryptedBytes);
+        return new String(cipher.doFinal(Base64.getDecoder().decode(encryptedBytes)));
     }
+
 
     private static Cipher getCipher(byte[] encryptionKey, int cipherMode) throws Exception {
         SecretKeySpec secretKeySpec = new SecretKeySpec(encryptionKey, ENCRYPT_ALGORITHM);
